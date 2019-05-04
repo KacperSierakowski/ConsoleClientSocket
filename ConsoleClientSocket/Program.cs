@@ -26,6 +26,8 @@ namespace ConsoleClientSocket
             }
             return localIp;
         }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Client");
@@ -35,6 +37,32 @@ namespace ConsoleClientSocket
             int port = 8888;
             IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse(ip), port);
             string filePath = "O:/Pas Oriona/Kariera/Nowy folder/a2253781357_5 — kopia.jpg";
+
+
+            //Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse("192.168.1.103"), 8888);
+            //socket.Connect(iPEnd);
+            //string message;
+            //do
+            //{
+            //    Console.WriteLine("Write a message:");
+            //    message = Console.ReadLine();
+            //    try
+            //    {
+            //        socket.Send(System.Text.Encoding.UTF8.GetBytes(message));
+
+            //        byte[] piggybackData = new byte[2];
+            //        socket.Receive(piggybackData);
+            //        Console.WriteLine("Piggyback data :" + System.Text.Encoding.UTF8.GetString(piggybackData));
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine("Connection aborted. " + e.ToString());
+            //    }
+            //} while (message.Length > 0);
+
+
+
             var client = new TcpClient();
             client.Connect(ip, port);
             Console.WriteLine("Connected to the server!");
